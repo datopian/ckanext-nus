@@ -1,0 +1,14 @@
+# nus-js:
+#   filter: rjsmin
+#   output: ckanext-nus/%(version)s-nus.js
+#   contents:
+#     - js/nus.js
+#   extra:
+#     preload:
+#       - base/main
+
+nus-css:
+  filter: cssrewrite
+  output: ckanext-nus/%(version)s-nus.css
+  contents:
+    - css/nus.css
