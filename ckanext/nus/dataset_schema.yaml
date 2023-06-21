@@ -46,8 +46,36 @@ dataset_fields:
   validators: ignore_missing unicode_safe package_version_validator
   form_placeholder: '1.0'
 
+- field_name: data_classification
+  label: Data classification
+  validators: ignore_missing unicode_safe
+  preset: select
+  form_include_blank_choice: false
+  required: true
+  choices:
+  - value: low_sensitivity_data
+    label: Low sensitivity data
+  - value: medium_sensitivity_data
+    label: Medium sensitivity data
+  - value: high_sensitivity_data
+    label: High sensitivity data
+
+- field_name: sub-portal
+  label: Sub-portal
+  validators: ignore_missing unicode_safe
+  form_include_blank_choice: false
+  required: true
+  preset: select
+  choices:
+  - value: public
+    label: Public
+  - value: learner
+    label: learner
+  - value: internal
+    label: Internal
+
 - field_name: author
-  label: Author
+  label: Owner
   form_placeholder: Joe Bloggs
   display_property: dc:creator
 
@@ -76,6 +104,11 @@ dataset_fields:
   display_snippet: null
   validators: ignore_missing publishing_status_validator
 
+- field_name: pkg_publishing_status
+  label: Publishing Status
+  form_snippet: null
+  display_snippet: null
+
 resource_fields:
 
 - field_name: url
@@ -94,3 +127,9 @@ resource_fields:
 - field_name: format
   label: Format
   preset: resource_format_autocomplete
+  
+- field_name: pkg_publishing_status
+  label: Publishing Status
+  form_snippet: null
+  display_snippet: null
+  
