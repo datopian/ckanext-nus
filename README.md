@@ -1,41 +1,16 @@
-[![Tests](https://github.com/datopian/ckanext-nus/workflows/Tests/badge.svg?branch=main)](https://github.com/datopian/ckanext-nus/actions)
+[![Tests](https://github.com//ckanext-datopian/workflows/Tests/badge.svg?branch=main)](https://github.com//ckanext-datopian/actions)
 
-# ckanext-nus
+# CKAN Base Extension for Datopian
 
-**TODO:** Put a description of your extension here:  What does it do? What features does it have? Consider including some screenshots or embedding a video!
+This is a CKAN base extension that provides a set of common functionality for Datopian's CKAN-based projects. 
 
-
-## Requirements
-
-**TODO:** For example, you might want to mention here which versions of CKAN this
-extension works with.
-
-If your extension works across different versions you can add the following table:
-
-Compatibility with core CKAN versions:
-
-| CKAN version    | Compatible?   |
-| --------------- | ------------- |
-| 2.6 and earlier | not tested    |
-| 2.7             | not tested    |
-| 2.8             | not tested    |
-| 2.9             | not tested    |
-
-Suggested values:
-
-* "yes"
-* "not tested" - I can't think of a reason why it wouldn't work
-* "not yet" - there is an intention to get it working
-* "no"
+The extension is designed to be highly customizable and modular, allowing you to easily add or remove features as needed. It is intendeted to be fully compatible with the latest version of CKAN.
 
 
-## Installation
+For more information on how to use the extension, please refer to the documentation included with the extension.
 
-**TODO:** Add any additional install steps to the list below.
-   For example installing any non-Python dependencies or adding any required
-   config settings.
 
-To install ckanext-nus:
+To install ckanext-datopian:
 
 1. Activate your CKAN virtual environment, for example:
 
@@ -43,12 +18,12 @@ To install ckanext-nus:
 
 2. Clone the source and install it on the virtualenv
 
-    git clone https://github.com/datopian/ckanext-nus.git
-    cd ckanext-nus
+    git clone https://github.com//ckanext-datopian.git
+    cd ckanext-datopian
     pip install -e .
 	pip install -r requirements.txt
 
-3. Add `nus` to the `ckan.plugins` setting in your CKAN
+3. Add `datopian` to the `ckan.plugins` setting in your CKAN
    config file (by default the config file is located at
    `/etc/ckan/default/ckan.ini`).
 
@@ -57,27 +32,23 @@ To install ckanext-nus:
      sudo service apache2 reload
 
 
-## Config settings
-
-None at present
-
-**TODO:** Document any optional config settings here. For example:
-
-	# The minimum number of hours to wait before re-checking a resource
-	# (optional, default: 24).
-	ckanext.nus.some_setting = some_default_value
-
-
 ## Developer installation
 
-To install ckanext-nus for development, activate your CKAN virtualenv and
+To install ckanext-datopian for development, activate your CKAN virtualenv and
 do:
 
-    git clone https://github.com/datopian/ckanext-nus.git
-    cd ckanext-nus
+    git clone https://github.com//ckanext-datopian.git
+    cd ckanext-datopian
     python setup.py develop
     pip install -r dev-requirements.txt
+    
 
+## Build new css
+It's using scss for styling. To build new css, do:
+
+    yarn  # only once to install dependencies
+    gulp bootstrapScss  # only once to copy bootstrap scss files
+    gulp build   # to build new css
 
 ## Tests
 
@@ -85,39 +56,3 @@ To run the tests, do:
 
     pytest --ckan-ini=test.ini
 
-
-## Releasing a new version of ckanext-nus
-
-If ckanext-nus should be available on PyPI you can follow these steps to publish a new version:
-
-1. Update the version number in the `setup.py` file. See [PEP 440](http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers) for how to choose version numbers.
-
-2. Make sure you have the latest version of necessary packages:
-
-    pip install --upgrade setuptools wheel twine
-
-3. Create a source and binary distributions of the new version:
-
-       python setup.py sdist bdist_wheel && twine check dist/*
-
-   Fix any errors you get.
-
-4. Upload the source distribution to PyPI:
-
-       twine upload dist/*
-
-5. Commit any outstanding changes:
-
-       git commit -a
-       git push
-
-6. Tag the new release of the project on GitHub with the version number from
-   the `setup.py` file. For example if the version number in `setup.py` is
-   0.0.1 then do:
-
-       git tag 0.0.1
-       git push --tags
-
-## License
-
-[AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)
