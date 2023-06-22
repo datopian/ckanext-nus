@@ -48,7 +48,9 @@ It's using scss for styling. To build new css, do:
 
     yarn  # only once to install dependencies
     gulp bootstrapScss  # only once to copy bootstrap scss files
-    gulp build   # to build new css
+    gulp build   # to build new css or 
+    gulp watch   # to watch and build 
+
 
 ## Tests
 
